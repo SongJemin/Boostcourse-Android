@@ -1,18 +1,543 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#eeeeee"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-</android.support.constraint.ConstraintLayout>
+        <RelativeLayout
+            android:id="@+id/main_movie_intro_rl"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/gra_top_layout"
+            android:paddingLeft="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/main_movie_poster_img"
+                android:layout_width="150dp"
+                android:layout_height="220dp"
+                android:src="@drawable/image11"
+                android:layout_centerVertical="true"
+                android:scaleType="fitXY"
+                />
+
+            <RelativeLayout
+                android:id="@+id/main_movie_content_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/main_movie_poster_img"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                >
+
+                <TextView
+                    android:id="@+id/main_movie_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="군도"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    />
+
+                <ImageView
+                    android:id="@+id/main_movie_age_grade_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_15"
+                    android:layout_toRightOf="@+id/main_movie_name_tv"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/main_movie_release_day_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2014.07.23 개봉"
+                    android:layout_below="@+id/main_movie_name_tv"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/main_movie_release_day_tv"
+                    >
+
+                    <TextView
+                        android:id="@+id/main_movie_genre_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="액션 / "
+                        android:textColor="#ffffff"
+                        android:textSize="17sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/main_movie_runtime_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="137 분"
+                        android:textColor="#ffffff"
+                        android:textSize="17sp"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:orientation="horizontal"
+                android:layout_below="@+id/main_movie_content_rl"
+                android:layout_alignLeft="@+id/main_movie_content_rl"
+                android:layout_marginTop="30dp"
+                >
+
+                <ImageView
+                    android:id="@+id/main_movie_like_img"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_thumb_up"
+                    />
+
+                <TextView
+                    android:id="@+id/main_movie_like_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    />
+
+                <ImageView
+                    android:id="@+id/main_movie_hate_img"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_thumb_down"
+                    android:layout_marginLeft="20dp"
+                    />
+
+                <TextView
+                    android:id="@+id/main_movie_hate_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/main_movie_center_loc_ll"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/main_movie_intro_rl"
+            android:background="#ffffff"
+            >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerInParent="true"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="예매율"
+                        android:layout_gravity="center"
+                        android:textColor="#757575"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/main_movie_rank_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5위"
+                            android:layout_centerHorizontal="true"
+                            android:textColor="#757575"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/main_movie_rank_percent_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1.8%"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="#757575"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#c0c0c0"
+                />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerInParent="true"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="평점"
+                        android:layout_gravity="center"
+                        android:textColor="#757575"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        >
+
+                        <RatingBar
+                            android:id="@+id/main_movie_rating_rb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:textColor="#757575"
+                            style="@style/Widget.AppCompat.RatingBar.Small"
+                            android:isIndicator="true"
+                            android:rating="4.5"
+                            android:stepSize="0.5"
+                            />
+
+                        <TextView
+                            android:id="@+id/main_movie_rating_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="8.2"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="#757575"
+                            android:textStyle="bold"
+                            android:textSize="15sp"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#c0c0c0"
+                />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerInParent="true"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="누적관객수"
+                        android:layout_gravity="center"
+                        android:textColor="#757575"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/main_movie_attendance_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="839,399명"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#757575"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:layout_marginTop="5dp"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_summary_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@+id/main_movie_center_loc_ll"
+            android:background="#ffffff"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="10dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="줄거리"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:id="@+id/main_movie_plot_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/main_summary_ll"
+                android:layout_alignBottom="@+id/main_summary_ll"
+                android:layout_marginTop="15dp"
+                android:text="군도, 백성을 구하라\n양반과 탐관오리들의 착취가 극에 달했던 철종 13년.\n힘 없는 백성의 편이 되어 세상을 바로잡고자 하는 의적떼인\n군도(群盜), 지리산 추철이 있었다.
+\n\n쌍칼 조치 vs 백성의 적 조윤\n잦은 자연재해, 기근과 관의 횡포까지 겹쳐 백성들의 삶이\n 날로 피폐해 져 가는 사이, 나주 대부호의 서자로 조선\n최고의 무관 출신인 조윤은 극악한 수법으로 양민들을 수탈,\n삼남지방 최고의 대부호로 성장한다.
+ 한 편 소, 돼지를 잡아\n 근근이 살아가던 천한 백정 돌무치는 죽어도 잊지 못할\n끔찍한 일을 당한 뒤 군도에 합류, 지리산 추설의 신 거성(新\n巨星)
+ 도치로 거듭난다.\n\n뭉치면 백성, 흩어지면 도적!\n망할 세상을 뒤집기 위해, 백성이 주인인 새 세상을 향해 도치를 필두로 한 군도는 백성의 적, 조윤과 한 판 승부를\n 시작하는데..."
+                android:textSize="15sp"
+                android:layout_marginBottom="10dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_dir_actor_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@+id/main_summary_ll"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="감독/출연"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="감독"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/main_movie_director_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="윤종빈"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="출연"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    />
+
+                <TextView
+                    android:id="@+id/main_movie_actor_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="하정우(도치), 강동원(조윤)"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_moview_review_ll"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:layout_below="@+id/main_dir_actor_ll"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="한줄평"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_centerVertical="true"
+                    />
+
+                <ImageView
+                    android:id="@+id/main_review_write_img"
+                    android:layout_width="25dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_review_selected"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/main_review_write_tv"
+                    android:layout_marginRight="5dp"
+                    android:layout_alignTop="@+id/main_review_write_tv"
+                    android:layout_alignBottom="@+id/main_review_write_tv"
+                    />
+
+                <TextView
+                    android:id="@+id/main_review_write_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="작성하기"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:textColor="#e54a20"
+                    android:layout_marginRight="20dp"
+                    />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/main_review_content_ll"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:orientation="vertical"
+                >
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/main_movie_see_all_btn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="모두 보기"
+                android:textSize="18sp"
+                android:textColor="#73399e"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/border_layout"
+                android:layout_marginRight="10dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_movie_share_ll"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/main_moview_review_ll"
+            android:gravity="center_vertical"
+            android:layout_marginVertical="10dp"
+            android:background="#ffffff"
+            android:paddingHorizontal="15dp"
+            >
+
+            <Button
+                android:id="@+id/main_share_facebook_btn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_facebook"
+                />
+
+            <Button
+                android:id="@+id/main_share_kakao_btn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_kakao"
+                android:layout_marginLeft="10dp"
+                />
+
+            <Button
+                android:id="@+id/main_movie_reserv_btn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="예매하기"
+                android:textSize="22sp"
+                android:textColor="#ffffff"
+                android:background="#e44418"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
